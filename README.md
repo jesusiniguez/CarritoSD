@@ -11,7 +11,7 @@ Hemos creado una aplicación desarrollada en Python con el fin de facilitar las 
 
 Las aplicación a sido desarrollada en Python utilizandos las herramientas:
  * XPATH a partir de Firebug
- ![IMAGEN](http://securityidiots.com/post_images/xpath_logo.png "xpaht")
+ [IMAGEN](http://securityidiots.com/post_images/xpath_logo.png "xpaht")
  * Selenium para obtener las url de las busquedas.
  * PhatomJS para no abrir un navegador con Selenium.
  * Requests para obtener el HTML de la URL.
