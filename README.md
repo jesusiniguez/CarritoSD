@@ -1,7 +1,7 @@
 # Proyecto CarritoSD Supermercado DIA
 
 ## Introducción
-Hemos creado una aplicación desarrollada en Python con el fin de facilitar las compras de forma online en la página web [ENLACE](http://www.dia.es/compra-online/ "http://www.dia.es/compra-online/")
+Hemos creado una aplicación desarrollada en Python con el fin de facilitar las compras de forma online en la página web [(http://www.dia.es/compra-online/ "http://www.dia.es/compra-online/")](http://www.dia.es/compra-online/ "http://www.dia.es/compra-online/")
 ### Encabezado h3
 #### Encabezado h4
 ##### Encabezado h5
