@@ -50,33 +50,3 @@ def Imprimir_y_Anadir(driver, filtro):
 	print 'Precio: ', Precio[0]
 	print " "
 	return Precio_a_Numero(Precio[0])
-
-#Creamos el driver Phantom para que nos consiga la URL del objeto
-driver = webdriver.PhantomJS()
-driver.set_window_size(1120, 550)
-Total = 0
-
-print "---   CARRITO DE COMPRA DE PRODUCTOS BASICO   ---"
-
-#Accedo a la URL del día
-Total += Imprimir_y_Anadir(driver, "DIA arroz largo 1kg")
-Total += Imprimir_y_Anadir(driver, "DIA lentejas pardina bolsa 1 Kg")
-Total += Imprimir_y_Anadir(driver, "DIA menestra de verduras bolsa 1 kg")
-Total += Imprimir_y_Anadir(driver, "DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
-Total += Imprimir_y_Anadir(driver, "DIA aceite de oliva extra virgen botella 750 ml")
-Total += Imprimir_y_Anadir(driver, "DIA leche semidesnatada envase 1 lt")
-Total += Imprimir_y_Anadir(driver, "LA RECETA huevos frescos categoria A clase M estuche 12 uds")
-Total += Imprimir_y_Anadir(driver, "DIA garbanzo extra bolsa 1 KG")
-Total += Imprimir_y_Anadir(driver, "Dia azucar 1kg")
-Total += Imprimir_y_Anadir(driver, "DIA yogur natural azucarado pack 12")
-Total += Imprimir_y_Anadir(driver, "DIA agua natural 1.5l")
-Total += Imprimir_y_Anadir(driver, "DIA barra pan")
-Total += Imprimir_y_Anadir(driver, "DIA macarron paquete")
-Total += Imprimir_y_Anadir(driver, "DIA refresco cola")
-Total += Imprimir_y_Anadir(driver, "DIA zumo exprimido naranja envase 1 lt")
-
-print 'PRECIO TOTAL DEL CARRITO DE COMPRA: ', Total, ' €'
-
-driver.quit()
-
-"""------------------------------------------------------------------------------------------"""
