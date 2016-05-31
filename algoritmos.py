@@ -33,6 +33,7 @@ def Busqueda(driver, filtro):
 	driver.find_element_by_xpath("//input[@id='search']").send_keys(filtro)
 	driver.find_element_by_xpath("//input[@type='image']").click()
 	driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img") .click()
+	return driver
 
 
 """
@@ -42,8 +43,8 @@ URL del artículo e imprime su precio y descripción, además de devolver el pre
 El total lo incremento FUERA de esta función por la dificultad añadida de las variables por
 referencia en python
 """
-def Imprimir_y_Anadir(driver, filtro):
-	Busqueda(driver, filtro)
+def Imprimir_y_Anadir(Max, Total, cantidad, driver, filtro):
+	driver = Busqueda(driver, filtro)
 	url = requests.get(driver.current_url)
 	#Mediante requests obtengo la web html
 	
@@ -52,8 +53,13 @@ def Imprimir_y_Anadir(driver, filtro):
 
 	Descripcion = Contenido.xpath('//h1[@itemprop="name"]/text()')
 	Precio = Contenido.xpath('//span[@itemprop="price"]/text()')
+	if(Almacenable(Max, Total, Precio_a_Numero(Precio[0]))):
+		print 'Producto: ', Descripcion[0].strip()
+		print 'Precio: ', Precio[0]
+		print 'Unidades: ', cantidad
+		return Precio_a_Numero(Precio[0])*cantidad
+	else:
+		return 0;
 
-	print 'Producto: ', Descripcion[0].strip()
-	print 'Precio: ', Precio[0]
-	print " "
-	return Precio_a_Numero(Precio[0])
+def Almacenable(Max, Total, Precio):
+	return Max >= Total+Precio

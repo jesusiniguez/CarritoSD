@@ -9,9 +9,16 @@ from selenium.common.exceptions import NoAlertPresentException
 
 #Menu inicial
 print "PROGRAMA DE INICIO"
-print "Carro 1 2 3 "
+print "1. Carrito Básico"
+print "2. Carrito para celíacos"
+print "3. Carrito para diabéticos"
 try:
     Choice=int(raw_input('Elija tipo de carro:'))
+except ValueError:
+    print "Escriba un número por favor"
+
+try:
+    Max=int(raw_input('Elija precio maximo del carro:'))
 except ValueError:
     print "Escriba un número por favor"
 
@@ -24,29 +31,46 @@ Total = 0 #Esta variable almacenará el precio del carrito.
 
 if Choice == 1:
 	print "---   CARRITO DE COMPRA DE PRODUCTOS BASICO   ---"
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA arroz largo 1kg")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA lentejas pardina bolsa 1 Kg")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA menestra de verduras bolsa 1 kg")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA aceite de oliva extra virgen botella 750 ml")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA leche semidesnatada envase 1 lt")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "LA RECETA huevos frescos categoria A clase M estuche 12 uds")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA garbanzo extra bolsa 1 KG")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "Dia azucar 1kg")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA yogur natural azucarado pack 12")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA agua natural 1.5l")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA barra pan")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA macarron paquete")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA refresco cola")
-	Total += algoritmos.Imprimir_y_Anadir(driver, "DIA zumo exprimido naranja envase 1 lt")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA arroz largo 1kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA lentejas pardina bolsa 1 Kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA menestra de verduras bolsa 1 kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA aceite de oliva extra virgen botella 750 ml")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA leche semidesnatada envase 1 lt")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "LA RECETA huevos frescos categoria A clase M estuche 12 uds")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA garbanzo extra bolsa 1 KG")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "Dia azucar 1kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA yogur natural azucarado pack 12")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA agua natural 1.5l")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA barra pan")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA macarron paquete")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA refresco cola")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA zumo exprimido naranja envase 1 lt")
+
 elif Choice == 2:
-    print('Zero')
+	print "---   CARRITO DE COMPRA DE PRODUCTOS PARA CELÍACOS   ---"
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA arroz largo 1kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA lentejas pardina bolsa 1 Kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA menestra de verduras bolsa 1 kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 2, driver, "DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 2, driver, "DIA aceite de oliva extra virgen botella 750 ml")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 6, driver, "DIA leche semidesnatada envase 1 lt")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 2, driver, "LA RECETA huevos frescos categoria A clase M estuche 12 uds")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA garbanzo extra bolsa 1 KG")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "Dia azucar 1kg")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA yogur natural azucarado pack 12")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 3, driver, "DIA agua natural 1.5l")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 2, driver, "DR. SCHAR baguette SIN GLUTEN envase 350 gr")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "GALLO pluma SIN GLUTEN paquete 500 gr")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 6, driver, "DIA refresco cola")
+	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA zumo exprimido naranja envase 1 lt")
+
 elif Choice == 3:
     print('Single')
 else:
     print('Error de inserción')
 
-if Choice >=1 && Choice <= 3: 
+if Choice >=1 and Choice <= 3: 
 	print 'PRECIO TOTAL DEL CARRITO DE COMPRA: ', Total, ' €'
 
 driver.quit()
