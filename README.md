@@ -19,8 +19,18 @@ Las aplicación a sido desarrollada en Python utilizandos las herramientas:
  * Requests para obtener el HTML de la URL.  
  ![IMAGEN](http://docs.python-requests.org/en/master/_static/requests-sidebar.png "requests")
  * LXML para transformar a String un HTML.  
- ![IMAGEN](http://lxml.de/s5/tagpython.png "LXML")  
-## Encabezado h3
+ ![IMAGEN](http://lxml.de/s5/tagpython.png "LXML")
+
+## Planificación y Reparto de Tareas.
+Idea Inicial:
+ * David Moreno Del Valle.
+ * Jesús Íñiguez García.
+ * Miguel Ángel Fernández Montilla.
+
+Desarrollo de la Aplicación:
+* Juan Sevillano Hernández.
+* Jesús Íñiguez García.
+ 
 #### Encabezado h4
 ##### Encabezado h5
 ###### Encabezado h6
