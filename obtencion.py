@@ -32,14 +32,14 @@ def Precio_a_Numero(Dato):
 	return float(Precio_Descompuesto)/100
 
 
-def Busqueda(filtro):
+def Busqueda(driver, filtro):
 	driver.get("http://www.dia.es/compra-online/")
 	driver.find_element_by_xpath("//input[@id='search']").send_keys(filtro)
 	driver.find_element_by_xpath("//input[@type='image']").click()
 	driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img") .click()
 
-def Imprimir_y_Anadir(filtro):
-	Busqueda(filtro)
+def Imprimir_y_Anadir(driver, filtro):
+	Busqueda(driver, filtro)
 	url = requests.get(driver.current_url)
 	Contenido = html.fromstring(url.content)
 
@@ -59,21 +59,21 @@ Total = 0
 print "---   CARRITO DE COMPRA DE PRODUCTOS BASICO   ---"
 
 #Accedo a la URL del día
-Total += Imprimir_y_Anadir("DIA arroz largo 1kg")
-Total += Imprimir_y_Anadir("DIA lentejas pardina bolsa 1 Kg")
-Total += Imprimir_y_Anadir("DIA menestra de verduras bolsa 1 kg")
-Total += Imprimir_y_Anadir("DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
-Total += Imprimir_y_Anadir("DIA aceite de oliva extra virgen botella 750 ml")
-Total += Imprimir_y_Anadir("DIA leche semidesnatada envase 1 lt")
-Total += Imprimir_y_Anadir("LA RECETA huevos frescos categoria A clase M estuche 12 uds")
-Total += Imprimir_y_Anadir("DIA garbanzo extra bolsa 1 KG")
-Total += Imprimir_y_Anadir("Dia azucar 1kg")
-Total += Imprimir_y_Anadir("DIA yogur natural azucarado pack 12")
-Total += Imprimir_y_Anadir("DIA agua natural 1.5l")
-Total += Imprimir_y_Anadir("DIA barra pan")
-Total += Imprimir_y_Anadir("DIA macarron paquete")
-Total += Imprimir_y_Anadir("DIA refresco cola")
-Total += Imprimir_y_Anadir("DIA zumo exprimido naranja envase 1 lt")
+Total += Imprimir_y_Anadir(driver, "DIA arroz largo 1kg")
+Total += Imprimir_y_Anadir(driver, "DIA lentejas pardina bolsa 1 Kg")
+Total += Imprimir_y_Anadir(driver, "DIA menestra de verduras bolsa 1 kg")
+Total += Imprimir_y_Anadir(driver, "DIA atun claro en aceite de oliva contenido bajo en sal pack 3 latas 156gr")
+Total += Imprimir_y_Anadir(driver, "DIA aceite de oliva extra virgen botella 750 ml")
+Total += Imprimir_y_Anadir(driver, "DIA leche semidesnatada envase 1 lt")
+Total += Imprimir_y_Anadir(driver, "LA RECETA huevos frescos categoria A clase M estuche 12 uds")
+Total += Imprimir_y_Anadir(driver, "DIA garbanzo extra bolsa 1 KG")
+Total += Imprimir_y_Anadir(driver, "Dia azucar 1kg")
+Total += Imprimir_y_Anadir(driver, "DIA yogur natural azucarado pack 12")
+Total += Imprimir_y_Anadir(driver, "DIA agua natural 1.5l")
+Total += Imprimir_y_Anadir(driver, "DIA barra pan")
+Total += Imprimir_y_Anadir(driver, "DIA macarron paquete")
+Total += Imprimir_y_Anadir(driver, "DIA refresco cola")
+Total += Imprimir_y_Anadir(driver, "DIA zumo exprimido naranja envase 1 lt")
 
 print 'PRECIO TOTAL DEL CARRITO DE COMPRA: ', Total, ' €'
 
