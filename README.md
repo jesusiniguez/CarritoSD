@@ -29,4 +29,4 @@
 
  [ENLACE](www.google.es "Título del enlace")
 
-![IMAGEN](http://www.economiadigital.es/es/notices/2016/05/asus-tambien-se-suma-a-la-moda-de-la-realidad-virtual-84147.php "Título de la imagen")
+![IMAGEN](http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg "Título de la imagen")
