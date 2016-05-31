@@ -15,9 +15,11 @@ Las aplicación a sido desarrollada en Python utilizandos las herramientas:
  * Selenium para obtener las url de las busquedas.  
  ![IMAGEN](http://www.seleniumhq.org/images/big-logo.png "selenium")
  * PhatomJS para no abrir un navegador con Selenium.  
- ![IMAGEN](http://photos2.meetupstatic.com/photos/event/8/3/9/2/600_435693682.jpeg "phantomjs")
+ ![IMAGEN](http://phantomjs.org/img/phantomjs-logo.png "phantomjs")
  * Requests para obtener el HTML de la URL.  
+ ![IMAGEN](http://docs.python-requests.org/en/master/_static/requests-sidebar.png "requests")
  * LXML para transformar a String un HTML.  
+ ![IMAGEN](http://lxml.de/s5/tagpython.png "LXML")  
 ## Encabezado h3
 #### Encabezado h4
 ##### Encabezado h5
