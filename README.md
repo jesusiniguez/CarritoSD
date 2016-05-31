@@ -1,7 +1,7 @@
-# CarritoSD
+# Proyecto CarritoSD Supermercado DIA
 
-# Encabezado h1 
-## Encabezado h2
+## Introducción
+Hemos creado una aplicación desarrollada en Python con el fin de facilitar las compras de forma online en la página web [ENLACE](http://www.dia.es/compra-online/ "http://www.dia.es/compra-online/")
 ### Encabezado h3
 #### Encabezado h4
 ##### Encabezado h5
@@ -27,6 +27,6 @@
  2. Otro elemento
 
 
- [ENLACE](www.google.es "Título del enlace")
+ [ENLACE](http://www.dia.es/compra-online/ "http://www.dia.es/compra-online/")
 
 ![IMAGEN](http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg "Título de la imagen")
