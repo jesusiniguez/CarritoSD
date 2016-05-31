@@ -9,8 +9,10 @@ from selenium.common.exceptions import NoAlertPresentException
 import requests
 import string
 
-#Funcion auxiliar para convertir un string de "euros" obtenido de la web 
-#que devuelva un número flotante que corresponda al precio del string
+"""
+Funcion auxiliar para convertir un string de "euros" obtenido de la web 
+que devuelva un número flotante que corresponda al precio del string
+"""
 def Precio_a_Numero(Dato):
 	Precio_Descompuesto=''
 	whitelist = string.letters + string.digits
@@ -18,12 +20,14 @@ def Precio_a_Numero(Dato):
 		if(char in string.letters + string.digits):
 			Precio_Descompuesto += char
 
-	return float(Precio_Descompuesto)/100
+	return float(Precio_Descompuesto)/100 #Divido entre 100 para que de el precio en euros, en vez de en centimos
 
 
 
-#Funcion de búsqueda que utiliza selenium para 
-#acceder a la web concreta de un artículo dado un filtro
+"""
+Funcion de búsqueda que utiliza selenium para 
+acceder a la web concreta de un artículo dado un filtro
+"""
 def Busqueda(driver, filtro):
 	driver.get("http://www.dia.es/compra-online/")
 	driver.find_element_by_xpath("//input[@id='search']").send_keys(filtro)
@@ -31,14 +35,22 @@ def Busqueda(driver, filtro):
 	driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img") .click()
 
 
-#Funcion que, dado un filtro, busca la 
-#URL del artículo e imprime su precio y descripción, además de devolver el precio
+"""
+Funcion que, dado un filtro, busca la 
+URL del artículo e imprime su precio y descripción, además de devolver el precio
+
+El total lo incremento FUERA de esta función por la dificultad añadida de las variables por
+referencia en python
+"""
 def Imprimir_y_Anadir(driver, filtro):
 	Busqueda(driver, filtro)
 	url = requests.get(driver.current_url)
+	#Mediante requests obtengo la web html
+	
 	Contenido = html.fromstring(url.content)
+	#Con LXML puedo convertir el html en un string plano para así localizar xpaths
 
-	Descripcion=Contenido.xpath('//h1[@itemprop="name"]/text()')
+	Descripcion = Contenido.xpath('//h1[@itemprop="name"]/text()')
 	Precio = Contenido.xpath('//span[@itemprop="price"]/text()')
 
 	print 'Producto: ', Descripcion[0].strip()
