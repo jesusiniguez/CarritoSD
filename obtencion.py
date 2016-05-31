@@ -23,8 +23,6 @@ Usamos:
 driver = webdriver.PhantomJS()
 driver.set_window_size(1120, 550)
 
-buscar="€"
-reemplazar_por=" "
 print "---   CARRITO DE COMPRA DE PRODUCTOS BASICO   ---"
 
 #Accedo a la URL del día
@@ -122,7 +120,7 @@ driver.find_element_by_xpath("//button[@id='addQuantityByProduct_12360']").click
 
 #Producto Nuevo
 driver.get("http://www.dia.es/compra-online/")
-driver.find_element_by_xpath("//input[@id='search']").send_keys("Dia leche semidesnatada")
+driver.find_element_by_xpath("//input[@id='search']").send_keys("DIA leche semidesnatada envase 1 lt")
 driver.find_element_by_xpath("//input[@type='image']").click()
 driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img").click()
 
@@ -160,7 +158,7 @@ driver.find_element_by_xpath("//button[@id='addQuantityByProduct_14636']").click
 
 #Producto Nuevo
 driver.get("http://www.dia.es/compra-online/")
-driver.find_element_by_xpath("//input[@id='search']").send_keys("Dia garbanzos 1kg")
+driver.find_element_by_xpath("//input[@id='search']").send_keys("DIA garbanzo extra bolsa 1 KG")
 driver.find_element_by_xpath("//input[@type='image']").click()
 driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img").click()
 
@@ -293,7 +291,7 @@ driver.find_element_by_xpath("//button[@id='addQuantityByProduct_203767']").clic
 
 #Producto Nuevo
 driver.get("http://www.dia.es/compra-online/")
-driver.find_element_by_xpath("//input[@id='search']").send_keys("DIA zumo")
+driver.find_element_by_xpath("//input[@id='search']").send_keys("DIA zumo exprimido naranja envase 1 lt")
 driver.find_element_by_xpath("//input[@type='image']").click()
 driver.find_element_by_xpath(u"//div[@id='content']/div[3]/div/div[2]/div[5]/div/div/a/span/img").click()
 
