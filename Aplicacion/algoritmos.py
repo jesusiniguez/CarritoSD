@@ -53,7 +53,7 @@ def Imprimir_y_Anadir(Max, Total, cantidad, driver, filtro):
 
 	Descripcion = Contenido.xpath('//h1[@itemprop="name"]/text()')
 	Precio = Contenido.xpath('//span[@itemprop="price"]/text()')
-	if(Almacenable(Max, Total, Precio_a_Numero(Precio[0]))):
+	if(Almacenable(Max, Total, Precio_a_Numero(Precio[0], cantidad))):
 		print 'Producto: ', Descripcion[0].strip()
 		print 'Precio: ', Precio[0]
 		print 'Unidades: ', cantidad
@@ -61,5 +61,5 @@ def Imprimir_y_Anadir(Max, Total, cantidad, driver, filtro):
 	else:
 		return 0;
 
-def Almacenable(Max, Total, Precio):
-	return Max >= Total+Precio
+def Almacenable(Max, Total, Precio, cantidad):
+	return Max >= Total+Precio*cantidad

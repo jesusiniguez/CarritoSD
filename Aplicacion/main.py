@@ -9,19 +9,22 @@ from selenium.common.exceptions import NoAlertPresentException
 
 #Menu inicial
 print "PROGRAMA DE INICIO"
+print "========================================================"
 print "1. Carrito Básico"
 print "2. Carrito para celíacos"
 print "3. Carrito para diabéticos"
+print " "
 try:
-    Choice=int(raw_input('Elija tipo de carro:'))
+    Choice=int(raw_input('Elija tipo de carro: '))
 except ValueError:
-    print "Escriba un número por favor"
+    print "Escriba un número por favor\n"
 
 try:
-    Max=int(raw_input('Elija precio maximo del carro:'))
+    Max=int(raw_input('Elija precio maximo del carro: '))
 except ValueError:
-    print "Escriba un número por favor"
+    print "Escriba un número por favor\n"
 
+print ""
 #Creo un driver de Selenium con el navegador PhantomJS (Navegador oculto)
 driver = webdriver.PhantomJS()
 driver.set_window_size(1120, 550)
@@ -31,6 +34,7 @@ Total = 0 #Esta variable almacenará el precio del carrito.
 
 if Choice == 1:
 	print "---   CARRITO DE COMPRA DE PRODUCTOS BASICO   ---"
+	print "========================================================"
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA arroz largo 1kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA lentejas pardina bolsa 1 Kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA menestra de verduras bolsa 1 kg")
@@ -49,6 +53,7 @@ if Choice == 1:
 
 elif Choice == 2:
 	print "---   CARRITO DE COMPRA DE PRODUCTOS PARA CELÍACOS   ---"
+	print "========================================================"
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA arroz largo 1kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA lentejas pardina bolsa 1 Kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, driver, "DIA menestra de verduras bolsa 1 kg")
@@ -67,6 +72,7 @@ elif Choice == 2:
 
 elif Choice == 3:
 	print "---   CARRITO DE COMPRA DE PRODUCTOS PARA DIABÉTICOS   ---"
+	print "========================================================"
     	Total += lgoritmos.Imprimir_y_Anadir(Max, Total, 1, "DIA arroz integral paquete 1 Kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, "DIA lentejas pardina bolsa 1 Kg")
 	Total += algoritmos.Imprimir_y_Anadir(Max, Total, 1, "DIA menestra de verduras bolsa 1 kg")
